@@ -28,7 +28,7 @@ export const searchForLeads = async (query: string, sources: LeadSourceType[], u
     }).join(" ");
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview", 
+      model: "gemini-1.5-flash", 
       contents: `TACHE : Recherche et QUALIFICATION de prospects B2B.
       
       REQUÊTE DE RECHERCHE : "${query}"
@@ -83,7 +83,7 @@ export const generateLeadEmail = async (lead: Lead, additionalInstructions?: str
   `;
 
   const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       responseMimeType: "application/json",
