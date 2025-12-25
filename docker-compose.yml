@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  autoprospect:
+    build: .
+    container_name: autoprospect-ai
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - autoprospect-network
+
+networks:
+  autoprospect-network:
+    driver: bridge
